@@ -13,6 +13,7 @@ public class JpaMain {
         EntityTransaction tx = em.getTransaction();
         tx.begin();
 
+        // TODO : TABLE NOT FOUND ERROR 해결
         try {
             Member member = Member.builder()
                     .id(1L)
