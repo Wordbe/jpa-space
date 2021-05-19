@@ -1,4 +1,4 @@
-package co.wordbe.shop.domain;
+package co.wordbe.shop.domain.example;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -9,14 +9,14 @@ import java.util.List;
 
 @Getter @Setter
 @Entity
-public class Team {
+public class Product {
 
     @Id @GeneratedValue
-    @Column(name = "TEAM_ID")
+    @Column(name = "PRODUCT_ID")
     private Long id;
 
     private String name;
 
-    @OneToMany(mappedBy = "team")
-    private List<Member> members = new ArrayList<>();
+    @OneToMany(mappedBy = "product")
+    private List<MemberProduct> memberProducts = new ArrayList<>();
 }
