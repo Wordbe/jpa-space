@@ -37,12 +37,12 @@ public class Member {
 //    @JoinColumn(name = "LOCKER_ID")
 //    private Locker locker;
 
-     // 다대다
+//    // 다대다
 //    @ManyToMany
 //    @JoinTable(name = "MEMBER_PRODUCT")
 //    private List<Product> products = new ArrayList<>();
 
-    // 다대다
-    @OneToMany(mappedBy = "member")
-    private List<MemberProduct> memberProducts = new ArrayList<>();
+//    // 다대다
+//    @OneToMany(mappedBy = "member")
+//    private List<MemberProduct> memberProducts = new ArrayList<>();
 }
