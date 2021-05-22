@@ -17,13 +17,7 @@ public class JpaMain {
 
         try {
 
-//            Member member = saveMember(em);
 
-//            Team team = new Team();
-//            team.setName("teamA");
-//            team.getMembers().add(member);
-
-//            em.persist(team);
 
             System.out.println("--------- commit ---------");
             tx.commit();
