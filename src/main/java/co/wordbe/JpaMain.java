@@ -1,6 +1,7 @@
 package co.wordbe;
 
 import co.wordbe.shop.domain.Member;
+import org.hibernate.Hibernate;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
@@ -16,8 +17,20 @@ public class JpaMain {
         tx.begin();
 
         try {
+            Member member1 = new Member();
+            member1.setName("member1");
+            em.persist(member1);
+            
+            em.flush();
+            em.clear();
 
+            Member m1 = em.find(Member.class, member1.getId());
+            System.out.println("m1.getClass() = " + m1.getClass());
 
+            Member reference = em.getReference(Member.class, member1.getId());
+            System.out.println("reference.getClass() = " + reference.getClass());
+
+            System.out.println(m1 == reference);
 
             System.out.println("--------- commit ---------");
             tx.commit();
