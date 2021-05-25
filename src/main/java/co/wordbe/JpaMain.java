@@ -2,7 +2,9 @@ package co.wordbe;
 
 import co.wordbe.shop.domain.cascade.Child;
 import co.wordbe.shop.domain.cascade.Parent;
+import co.wordbe.shop.domain.loading.Address;
 import co.wordbe.shop.domain.loading.Member;
+import co.wordbe.shop.domain.loading.Period;
 import co.wordbe.shop.domain.loading.Team;
 
 import javax.persistence.EntityManager;
@@ -20,20 +22,12 @@ public class JpaMain {
         tx.begin();
 
         try {
-            Child child1 = new Child();
-            Child child2 = new Child();
+            Member member = new Member();
+            member.setName("jack");
+            member.setHomeAddress(new Address("city1", "street1", "10234"));
+            member.setWorkPeriod(new Period());
 
-            Parent parent = new Parent();
-            parent.addChild(child1);
-            parent.addChild(child2);
-
-            em.persist(parent);
-
-            em.flush();
-            em.clear();
-
-            Parent findParent = em.find(Parent.class, parent.getId());
-            findParent.getChildList().remove(0);
+            em.persist(member);
 
             System.out.println("--------- commit ---------");
             tx.commit();
