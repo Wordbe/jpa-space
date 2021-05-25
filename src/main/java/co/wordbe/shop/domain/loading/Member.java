@@ -1,4 +1,4 @@
-package co.wordbe.shop.domain;
+package co.wordbe.shop.domain.loading;
 
 import co.wordbe.shop.domain.example.MemberProduct;
 import lombok.Getter;
@@ -19,13 +19,13 @@ public class Member {
     private Long id;
 
     private String name;
-    private String city;
-    private String street;
-    private String zipcode;
+//    private String city;
+//    private String street;
+//    private String zipcode;
 
-//    @ManyToOne
-//    @JoinColumn(name = "TEAM_ID")
-//    private Team team;
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "TEAM_ID")
+    private Team team;
 
 //    public void changeTeam(Team team) {
 //        this.team = team;

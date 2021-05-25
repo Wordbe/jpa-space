@@ -1,4 +1,4 @@
-package co.wordbe.shop.domain.example;
+package co.wordbe.shop.domain.loading;
 
 import lombok.Getter;
 import lombok.Setter;
