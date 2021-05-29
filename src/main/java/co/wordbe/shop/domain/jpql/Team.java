@@ -1,4 +1,4 @@
-package co.wordbe.shop.domain.loading;
+package co.wordbe.shop.domain.jpql;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -17,9 +17,9 @@ public class Team {
 
     private String name;
 
-//    // 양방향 매핑
-//    @OneToMany(mappedBy = "team")
-//    private List<Member> members = new ArrayList<>();
+    // 양방향 매핑
+    @OneToMany(mappedBy = "team")
+    private List<Member> members = new ArrayList<>();
 
     // 단방향 1:N
 //    @OneToMany
